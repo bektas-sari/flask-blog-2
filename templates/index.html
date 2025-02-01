@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Ana Sayfa - Benim Blogum{% endblock %}
+
+{% block content %}
+
+
+    <div class="row">
+        {% for post in posts %}
+            <div class="col-md-3">
+                <div class="card mb-4 shadow-sm">
+                    <!-- Blog Görseli -->
+                    <a href="{{ url_for('post_detail', id=post.id) }}">
+                        <img src="{{ url_for('static', filename='uploads/' + post.image) }}" class="card-img-top" alt="{{ post.title }}">
+                    </a>
+                    
+                    <div class="card-body text-center">
+                        <h5 class="card-title font-weight-bold">{{ post.title }}</h5>
+                        <a href="{{ url_for('post_detail', id=post.id) }}" class="btn btn-primary">Devamını Oku</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

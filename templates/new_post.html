@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Yeni Yazı Ekle - Benim Blogum{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="text-center mt-4">Yeni Yazı Ekle</h2>
+
+        <!-- enctype="multipart/form-data" EKLENDİ! -->
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+
+            <div class="mb-3">
+                <label for="title" class="form-label">{{ form.title.label }}</label>
+                {{ form.title(class="form-control") }}
+            </div>
+
+            <div class="mb-3">
+                <label for="content" class="form-label">{{ form.content.label }}</label>
+                {{ form.content(class="form-control") }}
+            </div>
+
+            <div class="mb-3">
+                <label for="image" class="form-label">{{ form.image.label }}</label>
+                {{ form.image(class="form-control") }} <!-- Görsel yükleme butonu burada -->
+            </div>     
+            
+            <div class="mb-3">
+                <label for="category" class="form-label">{{ form.category.label }}</label>
+                {{ form.category(class="form-control", multiple="multiple") }} <!-- Çoklu kategori seçimi -->
+            </div>     
+
+            <button type="submit" class="btn btn-success">Kaydet</button>
+            <a href="{{ url_for('admin_panel') }}" class="btn btn-secondary">İptal</a>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.title }} - Benim Blogum{% endblock %}
+
+{% block content %}
+<div class="container post-detail">
+    <div class="card">
+        <!-- Yazı Başlığı -->
+        <h1 class="post-title">{{ post.title }}</h1>
+
+        <!-- Yazı İçeriği (Tam Genişlik) -->
+        <div class="post-text">
+            <p>{{ post.content }}</p>
+        </div>
+
+       <!-- Sosyal Medya Paylaşım Butonları -->
+<div class="social-share">
+    <p class="share-text">Paylaşmak isterseniz</p>
+
+    <!-- Facebook -->
+    <a href="#" class="btn btn-sm btn-primary" 
+       data-url="https://www.facebook.com/sharer/sharer.php?u={{ request.url }}">
+        <i class="fab fa-facebook"></i> Facebook’ta Paylaş
+    </a>
+
+    <!-- Twitter (X) -->
+    <a href="#" class="btn btn-sm btn-info"
+       data-url="https://twitter.com/intent/tweet?url={{ request.url }}&text={{ post.title }}">
+        <i class="fab fa-x-twitter"></i> X'te Paylaş
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/" class="btn btn-sm btn-danger" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram’a Git
+    </a>
+
+
+    <!-- LinkedIn -->
+    <a href="#" class="btn btn-sm btn-dark"
+       data-url="https://www.linkedin.com/shareArticle?mini=true&url={{ request.url }}&title={{ post.title }}">
+        <i class="fab fa-linkedin"></i> LinkedIn'de Paylaş
+    </a>
+</div>
+
+
+        <!-- Ana Sayfaya Dön Butonu -->
+        <a href="/" class="btn btn-secondary mt-3">Ana Sayfaya Dön</a>
+    </div>
+</div>
+{% endblock %}

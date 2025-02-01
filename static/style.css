@@ -1,0 +1,230 @@
+/* Genel Sayfa Stili */
+body {
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* KART TASARIMI */
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 25px;
+    padding: 10px;
+    background: #ffffff;
+}
+
+/* Kart Hover Efekti */
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Kart İçindeki Görseller */
+.card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Kart İçindeki Yazılar */
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Genel Sayfa Boşlukları */
+.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Üstte Koyu Şerit ve Beyaz Yazı */
+.header-banner {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.header-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+}
+
+/* Üst ve Alt Navbar Çizgileri */
+.header-line, .navbar-line {
+    width: 80%;
+    margin: 10px auto;
+    border: 0;
+    height: 1px;
+    background-color: #bbb;
+}
+
+/* Navbar Menü Öğeleri İçin Daha İyi Hizalama */
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap; /* Alt alta gelmeyi engelle */
+    gap: 20px; /* Menü öğeleri arasındaki boşluk arttı */
+    overflow-x: auto; /* Eğer sığmazsa, kaydırmayı aktif et */
+    white-space: nowrap; /* Alt alta gelmesini önle */
+    padding: 10px 0;
+}
+
+/* NAVBAR GENEL STİLİ */
+.navbar {
+    background-color: transparent;
+    padding: 10px 0;
+}
+
+/* Navbar Menüsünü Yatay Hale Getir */
+.navbar-nav {
+    display: flex;
+    flex-direction: row; /* Yatay hizalama */
+    justify-content: center;
+    gap: 20px; /* Menü öğeleri arasındaki boşluğu artır */
+    white-space: nowrap; /* Metinlerin alt alta gelmesini önle */
+    overflow-x: auto; /* Taşarsa kaydırılabilir hale getir */
+    padding: 10px 0;
+}
+
+/* Navbar Linklerini Düzgün Hizala */
+.navbar-nav .nav-item {
+    flex-shrink: 0; /* Öğelerin küçülmesini engelle */
+    min-width: fit-content;
+    text-align: center;
+}
+
+/* Linklerin Daha Küçük Olmasını Sağla */
+.navbar-nav .nav-link {
+    font-size: 14px; /* Mobil için daha küçük font */
+    padding: 6px 10px;
+    text-transform: uppercase;
+    white-space: nowrap; /* Alt alta gelmeyi önle */
+    display: inline-block;
+}
+
+/* Kaydırma Çubuğunu Gizle */
+.navbar-nav::-webkit-scrollbar {
+    display: none; /* Webkit tarayıcılarında kaydırma çubuğunu gizle */
+}
+
+.navbar-nav {
+    -ms-overflow-style: none; /* Internet Explorer için kaydırma çubuğunu gizle */
+    scrollbar-width: none; /* Firefox için kaydırma çubuğunu gizle */
+}
+
+/* MOBİL CİHAZLAR İÇİN NAVBAR AYARLAMASI */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-wrap: nowrap; /* Alt alta gelmeyi tamamen engelle */
+        overflow-x: auto; /* Sağ-sol kaydırma özelliği ekle */
+        padding: 10px 0;
+        gap: 10px; /* Mobilde butonların arasındaki boşluğu küçült */
+    }
+
+    .navbar-nav .nav-item {
+        flex-shrink: 0;
+        min-width: fit-content;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 12px; /* Mobilde yazı boyutunu küçült */
+        padding: 5px 8px; /* Mobilde butonları daha küçük yap */
+    }
+}
+/* FOOTER STİLİ */
+.footer {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer .social-icon {
+    font-size: 20px;
+    margin: 0 10px;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icon:hover {
+    color: #999;
+}
+
+/* Footer Responsive Ayarları */
+@media (max-width: 768px) {
+    .footer .row {
+        text-align: center;
+    }
+
+    .footer .col-md-4 {
+        margin-bottom: 15px;
+    }
+}
+/* Yazı Detay Sayfası */
+.post-detail {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+}
+
+/* Yazı Başlığını Ortala */
+.post-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: 'Merriweather', serif; /* Daha şık ve okunaklı font */
+}
+
+/* Yazıyı Tam Genişlikte Göster ve Kenar Boşluklarını Artır */
+.post-text {
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.5; /* Satır aralığını azalttık */
+    text-align: justify;
+    font-family: 'Merriweather', serif; /* Daha okunaklı ve şık bir font */
+    letter-spacing: 0.4px; /* Harf aralıklarını dengeledik */
+    word-spacing: 0.8px; /* Kelime boşluklarını optimize ettik */
+    padding: 15px 40px; /* Sağ ve sol kenar boşlukları */
+    
+}
+
+
+/* Sosyal Medya Paylaşım Butonları */
+.social-share {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.share-text {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.social-share a {
+    margin: 5px;
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 5px;
+}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Girişi - Benim Blogum{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="text-center mt-4">Admin Girişi</h2>
+        
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="mb-3">
+                <label for="username" class="form-label">{{ form.username.label }}</label>
+                {{ form.username(class="form-control") }}
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">{{ form.password.label }}</label>
+                {{ form.password(class="form-control") }}
+            </div>
+            <button type="submit" class="btn btn-primary">Giriş Yap</button>
+        </form>
+    </div>
+{% endblock %}

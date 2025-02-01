@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Yazıyı Düzenle{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center">Yazıyı Güncelle</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Başlık</label>
+            <input type="text" class="form-control" id="title" name="title" value="{{ post.title }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="content" class="form-label">İçerik</label>
+            <textarea class="form-control" id="content" name="content" rows="5" required>{{ post.content }}</textarea>
+        </div>
+
+        <!-- Kategori Seçimi -->
+        <div class="mb-3">
+            <label class="form-label">Kategoriler</label><br>
+            {% for category in ['Ben', 'Sen', 'O', 'Sözcükler', 'Ve', 'Hepimiz'] %}
+                <input type="checkbox" name="category" value="{{ category }}" 
+                {% if category in post.category.split(',') %} checked {% endif %}>
+                {{ category }}
+            {% endfor %}
+        </div>
+
+        <!-- Görsel Yükleme -->
+        <div class="mb-3">
+            <label for="image" class="form-label">Yeni Görsel (Opsiyonel)</label>
+            <input type="file" class="form-control" id="image" name="image">
+            {% if post.image %}
+                <p>Mevcut Görsel:</p>
+                <img src="{{ url_for('static', filename='uploads/' + post.image) }}" alt="Mevcut Görsel" class="img-thumbnail" width="150">
+            {% endif %}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Güncelle</button>
+        <a href="{{ url_for('admin_panel') }}" class="btn btn-secondary">İptal</a>
+    </form>
+</div>
+{% endblock %}
