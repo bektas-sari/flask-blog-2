@@ -44,7 +44,7 @@ Bu proje, Flask tabanlı bir kişisel blog sitesidir. Kullanıcılar yazıları 
 🔧 Kurulum & Çalıştırma
 
 1️⃣ Depoyu Klonla:
-git clone https://github.com/kullaniciadi/flask_blog.git
+git clone https://github.com/bektas-sari/flask-blog-2.git
 cd flask_blog
 
 2️⃣ Gerekli Paketleri Yükle:
